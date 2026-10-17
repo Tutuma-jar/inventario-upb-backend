@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: inventario-upb-backend
+    runtime: node
+    buildCommand: npm ci
+    preDeployCommand: npm run db:init
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: false
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: inventario-upb-db
+          property: connectionString
+      - key: DB_SSL
+        value: false
+
+databases:
+  - name: inventario-upb-db
+    databaseName: inventario_upb
+    user: inventario_upb
+    plan: free
