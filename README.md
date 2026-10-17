@@ -21,6 +21,6 @@ La API queda disponible en `http://localhost:3000/api/productos`.
 
 ## Despliegue
 
-`render.yaml` define el Web Service y la base PostgreSQL administrada. Render ejecuta
-`npm run db:init` antes de cada despliegue y GitHub Actions requiere el secreto
+`render.yaml` define el Web Service y la base PostgreSQL administrada. Al iniciar, Render
+ejecuta `npm run db:init` antes de levantar la API; GitHub Actions requiere el secreto
 `RENDER_DEPLOY_HOOK` con el deploy hook del servicio.
