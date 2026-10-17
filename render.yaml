@@ -2,6 +2,7 @@ services:
   - type: web
     name: inventario-upb-backend
     runtime: node
+    plan: free
     buildCommand: npm ci
     preDeployCommand: npm run db:init
     startCommand: npm start
